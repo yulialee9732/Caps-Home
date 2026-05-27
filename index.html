@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --off-white: #f9f8f6;
+      --light: #f0ede8;
+      --mid: #e2ddd6;
+      --ink: #1a1814;
+      --ink-soft: #4a4640;
+      --blue: #025AFC;
+      /* --blue-dark: #a6883a; */
+      --nav-h: 90px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      font-family: "Nanum Gothic", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: box-shadow 0.3s ease;
+    }
+    .navbar-inner {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      max-width: 1400px;
+    }
+
+    nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+
+    .nav-logo {
+      height: 50px;
+    }
+
+    .nav-logo img{
+      height: 100%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ink-soft);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1.5px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-num {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: var(--white);
+      padding: 15px 30px;
+      border-radius: 30px;
+      transition: all 0.2s ease;
+      background-color: var(--blue);
+    }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--mid);
+      padding: 24px 32px 32px;
+      z-index: 999;
+      flex-direction: column;
+      gap: 0;
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--light);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--blue); }
+
+    /* ── SECTIONS ── */
+    section {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      padding: 80px 48px;
+    }
+
+    section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: 'nanum gothic', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      max-width: 480px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .placeholder-block {
+      width: min(480px, 80%);
+      height: 4px;
+      background: var(--light);
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* Alternating section backgrounds */
+    #hero       { background: var(--white); min-height: 100vh; }
+    #subscription      { background: var(--off-white); }
+    #price   { background: var(--white); }
+    #s4  { background: var(--off-white); }
+    #s5    { background: var(--white); }
+    #s6         { background: var(--off-white); }
+    #pros         { background: var(--white); }
+    #reviews         { background: var(--off-white); }
+    #s10         { background: var(--white); }
+    #faq        { background: var(--off-white); }
+    #s12       { background: var(--white); }
+    #form    { background: var(--ink); color: var(--white); }
+
+    #hero .section-title { font-size: clamp(3rem, 7vw, 6rem); }
+    #hero .section-sub   { font-size: 1.1rem; max-width: 540px; }
+
+    #form .section-label { color: var(--blue); }
+    #form .section-title { color: var(--white); }
+    #form .section-sub   { color: rgba(255,255,255,0.6); }
+    #form .placeholder-block { background: rgba(255,255,255,0.15); }
+
+    /* Decorative accent line */
+    .accent-line {
+      width: 48px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 1px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:1250px) {
+      .nav-links {gap: 20px;}
+      .nav-links a {font-size: 1rem;}
+      .nav-num {font-size: 1rem; padding: 12px 20px;}
+      .nav-logo {height: 40px;}
+    }
+    @media (max-width: 960px) {
+      nav { padding: 0 24px; height: 70px;}
+      .navbar-inner{padding: 0 15px;}
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      /* .nav-num { display: none; } */
+
+      section { padding: 60px 24px; }
+      section:first-of-type { padding-top: calc(var(--nav-h) + 60px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="navbar-inner">
+      <a href="#hero" class="nav-logo"><img src="img/logo.png"></a>
+      <ul class="nav-links">
+        <li><a href="#subscription">36개월 구독</a></li>
+        <li><a href="#price">가격</a></li>
+        <li><a href="#pros">특장점</a></li>
+        <li><a href="#reviews">후기</a></li>
+        <li><a href="#optional">추가옵션</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#form">상담신청</a></li>
+      </ul>
+      <a href="tel:+8215220392" class="nav-num">신규상담: 1522-0392</a>  
+    </div>
+    
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#subscription"     onclick="closeMenu()">36개월 구독</a>
+    <a href="#price"  onclick="closeMenu()">가격</a>
+    <a href="#pros" onclick="closeMenu()">특장점</a>
+    <a href="#reviews"      onclick="closeMenu()">후기</a>
+    <a href="#optional"   onclick="closeMenu()">추가옵션</a>
+    <a href="#faq"        onclick="closeMenu()">FAQ</a>
+    <a href="#form"       onclick="closeMenu()">상담신청</a>
+  </div>
+
+  <!-- SECTION 1: Hero (main banner — not in navbar) -->
+  <section id="hero">
+    <span class="section-label">Welcome</span>
+    <h1 class="section-title">캡스홈 현관CCTV</h1>
+    <p class="section-sub">This is the hero section. It is the main banner and is not linked in the navbar.</p>
+    <div class="accent-line"></div>
+  </section>
+
+  <!-- SECTION 2: subscription (navbar link) -->
+  <section id="subscription">
+    <span class="section-label">Section 02</span>
+    <h2 class="section-title">36개월 구독 혜택!</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 3: price (navbar link) -->
+  <section id="price">
+    <span class="section-label">Section 03</span>
+    <h2 class="section-title">36개월 구독 가격안내</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 4: pros (not in navbar) -->
+  <section id="s4">
+    <span class="section-label">Section 04</span>
+    <h2 class="section-title">추가 할인 혜택!</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 5: Process (not in navbar) -->
+  <section id="s5">
+    <span class="section-label">Section 05</span>
+    <h2 class="section-title">캡스홈 현관CCTV를 경험해보세요!</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 6 (not in navbar) -->
+  <section id="s6">
+    <span class="section-label">Section 06</span>
+    <h2 class="section-title">1,2,3,4,5,6,7,8</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 7 (navbar link) -->
+  <section id="pros">
+    <span class="section-label">Section 07</span>
+    <h2 class="section-title">특장점</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 8 (not in navbar) -->
+  <section id="reviews">
+    <span class="section-label">Section 08</span>
+    <h2 class="section-title">직접 사용해보신 고객님들의 솔직한 실제 후기입니다.</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 9 (navbar link) -->
+  <section id="optional">
+    <span class="section-label">Section 09</span>
+    <h2 class="section-title">함께 사용하면 편리한 캡스홈 현관CCTV의 옵션상품 추천드립니다.</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 10 (not in navbar) -->
+  <section id="s10">
+    <span class="section-label">Section 10</span>
+    <h2 class="section-title">앱으로 편리하게 캡스홈 현관CCTV 사용 가이드 안내드립니다.</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 11: FAQ (navbar link) -->
+  <section id="faq">
+    <span class="section-label">Section 11</span>
+    <h2 class="section-title">FAQ</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 12: (not in navbar) -->
+  <section id="s12">
+    <span class="section-label">Section 12</span>
+    <h2 class="section-title">캡스홈 현관CCTV를 이용하실 경우 진행 단계 입니다.</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <!-- SECTION 13: (navbar link) -->
+  <section id="form">
+    <span class="section-label">Section 13</span>
+    <h2 class="section-title">Contact Form</h2>
+    <p class="section-sub">Content coming soon.</p>
+    <div class="placeholder-block"></div>
+  </section>
+
+  <script>
+    // Navbar shadow on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+    });
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+    }
+  </script>
+</body>
+</html>
