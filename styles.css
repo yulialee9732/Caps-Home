@@ -13,6 +13,16 @@
     /* --blue-dark: #a6883a; */
     --nav-h: 90px;
 
+    /* large size title */
+    --sec-ti1:3.3rem;
+    --sec-ti1-line: 5rem;
+    --sec-ti1-1250: 2.4rem;
+    --sec-ti1-1250-line: 5rem;
+    --sec-ti1-960: 2rem;
+    --sec-ti1-960-line: 4rem;
+    --sec-ti1-786: 5vw;
+    --sec-ti1-786-line: 10vw;
+
     /* med size title */
     --sec-ti2: 2rem;
     --sec-ti2-line: 4rem;
@@ -43,6 +53,25 @@
     --sec-label-786: 3vw;
     --sec-label-786-line: 5vw;
 
+    /* small */
+    --sec-small: 1rem;
+    --sec-small-line: 1.7rem;
+    --sec-small-1250: 0.8rem;
+    --sec-small-1250-line: 1.5rem;
+    --sec-small-960: 0.7rem;
+    --sec-small-960-line: 1.5rem;
+    --sec-small-786: 2.5vw;
+    --sec-small-786-line: 4vw;
+
+    /* xsmall */
+    --sec-xsmall: 0.8rem;
+    --sec-xsmall-line: 1.5rem;
+     --sec-xsmall-1250: 0.7rem;
+    --sec-xsmall-1250-line: 1.5rem;
+    --sec-xsmall-960: 0.6rem;
+    --sec-xsmall-960-line: 1.5rem;
+    --sec-xsmall-786: 2vw;
+     --sec-xsmall-786-line: 4vw;
 }
 
 html { scroll-behavior: smooth; }
@@ -378,13 +407,128 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     font-weight: 400;
 }
 
+/* SECTION 4 */
+#s4 .s4-title-group { 
+    text-align: left; 
+    color: var(--ink); 
+    /* background-color: #025AFC; */
+    width: 100%;
+    max-width: 1250px;
+    text-align: left;
+}
+#s4 .s4-title-group .section-title {
+    font-size: var(--sec-ti2);
+    line-height: var(--sec-ti2-line);
+    text-align: left;
+}
+#s4 .s4-title-group .section-sub-title {
+    font-size: var(--sec-ti1);
+    line-height: var(--sec-ti1-line);
+}
+#s4 .s4-title-group .blue {
+    color: var(--blue);
+    font-weight: 700;
+    font-size: var(--sec-sub);
+    line-height: var(--sec-sub-line);
+    padding-top: 20px;
+}
+#s4 .s4-title-group .add {
+    color: var(--grey);
+    font-weight: 400;
+    font-size: var(--sec-sub)-12px;
+    line-height: var(--sec-sub-line);
+}
+#s4 .s4-card-group {
+    display: flex;
+    margin-top: 80px;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 1250px;
+    width: 100%;
+}
+#s4 .s4-card-group .left{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#s4 .s4-card-group .left img { width: 50%; justify-content:  center;}
+#s4 .s4-card-group .left h5 {text-align: center; font-size: var(--sec-label); line-height: var(--sec-label-line);}
+#s4 .s4-card-group .right {width: 100%;}
+.discount-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  border-radius: 10px;
+}
 
+.discount-table th {
+  background-color: var(--blue);
+  color: #fff;
+  padding: 16px;
+  font-weight: 600;
+  border: 0.5px solid var(--off-white);
+}
 
-
-
-
-
-
+.discount-table td {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  color: #333;
+  font-weight: 400;
+  font-size: var(--sec-sub)-12px;
+  line-height: var(--sec-sub-line);
+}
+#s4 .s4-card-group .right .table-below h1{
+    color: var(--grey);
+    font-size: var(--sec-xsmall);
+    line-height: var(--sec-xsmall-line);
+    font-weight: 400;
+    padding-top: 10px;
+}
+#s4 .s4-card-group .right .table-below h2{
+    color: red;
+    font-size: var(--sec-small);
+    line-height: var(--sec-small-line);
+    font-weight: 700;
+    padding-top: 20px;
+}
+#s4 .s4-card-group .right .table-below h3{
+    color: var(--grey);
+    font-size: var(--sec-small);
+    line-height: var(--sec-small-line);
+    font-weight: 400;
+}
+#s4 .s4-link-group {
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+}
+#s4 .s4-link-group .left{
+    background-color: #025AFC;
+    height: fit-content;
+    padding: 20px 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+#s4 .s4-link-group .left a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: var(--sec-small);
+    line-height: var(--sec-small-line);
+    font-weight: 400;
+}
+#s4 .s4-link-group .right h1 {
+    color: var(--blue);
+    font-size: var(--sec-label);
+    line-height: var(--sec-label-line);
+    font-weight: 700;
+}
+#s4 .s4-link-group .right h2 {
+    color: var(--grey);
+    font-size: var(--sec-small);
+    line-height: var(--sec-small-line);
+    font-weight: 400;
+}
 
 #form .section-title { color: var(--white); }
 #form .section-sub   { color: rgba(255,255,255,0.6); }
@@ -412,7 +556,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
 
     /* SECTION 2 */
     .subscription-inner .left .section-title        {font-size: var(--sec-ti2-1250); line-height: var(--sec-ti2-1250-line);}
-    .subscription-inner .left .section-sub-title    {font-size: 2.4rem; line-height: 5rem;}
+    .subscription-inner .left .section-sub-title    {font-size: var(--sec-ti1-1250); line-height: (var(--sec-ti1-1250-line));}
     .subscription-inner .left .red                  {font-size: 1.3rem; line-height: 3rem; padding-bottom: 30px;}
     .subscription-inner .left .section-sub          {font-size: 1rem; line-height: 1.7rem;}
 
@@ -421,6 +565,14 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #price .section-sub                             { font-size: var(--sec-sub-1250); line-height: var(--sec-sub-1250-line);}
     #price .label                                   { font-size: var(--sec-label-1250); line-height: var(--sec-label-1250-line);}   
     .price-list .text-big-red                       { font-size: var(--sec-ti2-1250); line-height: var(--sec-ti2-1250-line);}
+
+    /* SECTION 4 */
+    #s4 .s4-card-group .left h5                     {font-size: var(--sec-label-1250); line-height: var(--sec-label-1250-line);}
+    #s4 .s4-title-group .section-title              { font-size: var(--sec-ti2-1250); line-height: var(--sec-ti2-1250-line);}
+    #s4 .s4-title-group .section-sub-title          { font-size: var(--sec-ti1-1250); line-height: var(--sec-ti1-1250-line);}
+    #s4 .s4-card-group .right .table-below h1       { font-size: var(--sec-xsmall-1250); line-height: var(--sec-xsmall-1250-line);}
+    #s4 .s4-card-group .right .table-below h2       { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
+    #s4 .s4-card-group .right .table-below h3       { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
 }
 @media (max-width: 960px) {
     nav { padding: 0 24px; height: 70px;}
@@ -439,7 +591,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     .subscription-inner .left                       { display: flex; flex-direction: column; align-items:flex-start; width: 100%;}
     .subscription-inner .right                      { margin-left: auto; max-width: 500px; width: 70%;}
     .subscription-inner .left .section-title        {font-size: var(--sec-ti2-960); line-height: var(--sec-ti2-960-line);}
-    .subscription-inner .left .section-sub-title    {font-size: 2rem; line-height: 4rem;}
+    .subscription-inner .left .section-sub-title    {font-size: var(--sec-ti1-960); line-height: var(--sec-ti1-960-line);}
     .subscription-inner .left .red                  {font-size: 1rem; line-height: 2rem; padding-bottom: 20px;}
     .subscription-inner .left .section-sub          {font-size: 0.9rem; line-height: 1.7rem;}
     .price-inner::after                             {display: none;}
@@ -451,14 +603,31 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #price .price-inner                             { flex-direction: column; gap: 30px;}
     .price-list .text-big-red                       { font-size: var(--sec-ti2-960); line-height: var(--sec-ti2-960-line);}
     #price .price-inner .right                      { border-top: none; padding: 0; }
-    #price .description { padding-bottom: 10px; transform: translateY(0); }    
+    #price .description                             { padding-bottom: 10px; transform: translateY(0); }    
+
+    /* SECTION 4 */
+    #s4 .s4-card-group                              { flex-direction: column; gap: 40px;}
+    #s4 .s4-card-group .left                        { width: 100%; gap: 20px; justify-content: center;}
+    #s4 .s4-card-group .left img                    { width: 30%; }
+    #s4 .s4-card-group .left h5                     {font-size: var(--sec-label-960); line-height: var(--sec-label-960-line);}
+    .discount-table th, .discount-table td {
+        padding: 12px 8px;  
+        font-size: var(--sec-small-960)-12px;
+        line-height: var(--sec-small-960-line);
+    }
+    #s4 .s4-title-group .section-title              { font-size: var(--sec-ti2-960); line-height: var(--sec-ti2-960-line);}
+    #s4 .s4-title-group .section-sub-title          { font-size: var(--sec-ti1-960); line-height: var(--sec-ti1-960-line);}
+    #s4 .s4-card-group .right .table-below h1       { font-size: var(--sec-xsmall-960); line-height: var(--sec-xsmall-960-line);}
+    #s4 .s4-card-group .right .table-below h2       { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
+    #s4 .s4-card-group .right .table-below h3       { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
+    #s4 .s4-link-group                              { flex-direction: column; gap: 20px; align-items: center;}    
 }
 @media (max-width: 786px){
     #hero .section-sub {font-size: 3vw;}
     #hero .section-title {font-size: 5vw;}
     .nav-num {font-size: 2.5vw; padding: 8px 10px;}
     .subscription-inner .left .section-title        {font-size: var(--sec-ti2-786); line-height: var(--sec-ti2-786-line);}
-    .subscription-inner .left .section-sub-title    {font-size: 5vw; line-height: 10vw;}
+    .subscription-inner .left .section-sub-title    {font-size: var(--sec-ti1-786); line-height: var(--sec-ti1-786-line);}
     .subscription-inner .left .red                  {font-size: 3vw; line-height: 5vw; padding-bottom: 20px;}
     .subscription-inner .left .section-sub          {font-size: 3vw; line-height: 5vw;}
 
@@ -467,4 +636,17 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #price .section-sub                             { font-size: var(--sec-sub-786); line-height: var(--sec-sub-786-line);} 
     #price .label, #price .price                    { font-size: var(--sec-label-786); line-height: var(--sec-label-786-line);} 
     .price-list .text-big-red                       { font-size: var(--sec-ti2-786); line-height: var(--sec-ti2-786-line);}
+
+    /* SECTION 4 */     
+    #s4 .s4-card-group .left h5                     {font-size: var(--sec-label-786); line-height: var(--sec-label-786-line);}
+    #s4 .s4-title-group .section-title              { font-size: var(--sec-ti2-786); line-height: var(--sec-ti2-786-line);}
+    #s4 .s4-title-group .section-sub-title          { font-size: var(--sec-ti1-786); line-height: var(--sec-ti1-786-line);}
+    #s4 .s4-card-group .right .table-below h1       { font-size: var(--sec-xsmall-786); line-height: var(--sec-xsmall-786-line);}
+    #s4 .s4-card-group .right .table-below h2       { font-size: var(--sec-small-786); line-height: var(--sec-small-786-line);}
+    #s4 .s4-card-group .right .table-below h3       { font-size: var(--sec-small-786); line-height: var(--sec-small-786-line);}
+    .discount-table th, .discount-table td {
+        padding: 12px 8px;  
+        font-size: var(--sec-small-786);
+        line-height: var(--sec-small-786-line);
+    }
 }
