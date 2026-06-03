@@ -17,11 +17,11 @@
     --sec-ti1:3.3rem;
     --sec-ti1-line: 5rem;
     --sec-ti1-1250: 2.4rem;
-    --sec-ti1-1250-line: 5rem;
+    --sec-ti1-1250-line: 4rem;
     --sec-ti1-960: 2rem;
     --sec-ti1-960-line: 4rem;
     --sec-ti1-786: 5vw;
-    --sec-ti1-786-line: 10vw;
+    --sec-ti1-786-line: 7vw;
 
     /* med size title */
     --sec-ti2: 2rem;
@@ -530,6 +530,54 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     font-weight: 400;
 }
 
+/* SECTION 5 */
+#s5 {
+    width: 100%;
+    position: relative;
+    height: 45vw;
+    display: flex;
+    background-image: url(img/cap_bg\ copy.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#s5 .s5-inner {
+    width: 100%;
+    max-width: 1250px;
+    height: 100%;
+    /* height: fit-content; */
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    /* background-color: #025AFC; */
+    
+}
+#s5 .s5-inner .s5-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 1250px;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    color: var(--white);
+}
+#s5 .s5-inner .s5-text h1 {
+    font-size: var(--sec-ti2);
+    line-height: var(--sec-ti2-line);
+    padding-bottom: 20px;
+}
+#s5 .s5-inner .s5-text h2 {
+    font-size: var(--sec-ti1);
+    line-height: var(--sec-ti1-line);
+}
+
+
+
+
+
+
+
+
+
 #form .section-title { color: var(--white); }
 #form .section-sub   { color: rgba(255,255,255,0.6); }
 
@@ -573,6 +621,10 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #s4 .s4-card-group .right .table-below h1       { font-size: var(--sec-xsmall-1250); line-height: var(--sec-xsmall-1250-line);}
     #s4 .s4-card-group .right .table-below h2       { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
     #s4 .s4-card-group .right .table-below h3       { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
+
+    /* SECTION 5 */
+    #s5 .s5-inner .s5-text h1                       { font-size: var(--sec-ti2-1250); line-height: var(--sec-ti2-1250-line);}   
+    #s5 .s5-inner .s5-text h2                       { font-size: var(--sec-ti1-1250); line-height: var(--sec-ti1-1250-line);}
 }
 @media (max-width: 960px) {
     nav { padding: 0 24px; height: 70px;}
@@ -620,7 +672,12 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #s4 .s4-card-group .right .table-below h1       { font-size: var(--sec-xsmall-960); line-height: var(--sec-xsmall-960-line);}
     #s4 .s4-card-group .right .table-below h2       { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
     #s4 .s4-card-group .right .table-below h3       { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
-    #s4 .s4-link-group                              { flex-direction: column; gap: 20px; align-items: center;}    
+    #s4 .s4-link-group                              { flex-direction: column; gap: 20px; align-items: center;}  
+    
+    /* SECTION 5 */
+    #s5                                             { background-color: #222427; height: 60vh; background-size: 130%; background-attachment: unset; background-position: center 100%;}   
+    #s5 .s5-inner .s5-text h1                       { font-size: var(--sec-ti2-960); line-height: var(--sec-ti2-960-line);}  
+    #s5 .s5-inner .s5-text h2                       { font-size: var(--sec-ti1-960); line-height: var(--sec-ti1-960-line);}
 }
 @media (max-width: 786px){
     #hero .section-sub {font-size: 3vw;}
@@ -649,4 +706,9 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
         font-size: var(--sec-small-786);
         line-height: var(--sec-small-786-line);
     }
+
+    /* SECTION 5 */
+    #s5                                             { background-color: #222427; height: 40vh; background-size: 130%; background-attachment: unset; background-position: center 100%;}   
+    #s5 .s5-inner .s5-text h1                       { font-size: var(--sec-ti2-786); line-height: var(--sec-ti2-786-line);}
+    #s5 .s5-inner .s5-text h2                       { font-size: var(--sec-ti1-786); line-height: var(--sec-ti1-786-line);}  
 }
