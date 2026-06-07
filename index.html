@@ -19,7 +19,7 @@
       <ul class="nav-links">
         <li><a href="#subscription">36개월 구독</a></li>
         <li><a href="#price">가격</a></li>
-        <li><a href="#pros">특장점</a></li>
+        <li><a href="#s5">특장점</a></li>
         <li><a href="#reviews">후기</a></li>
         <li><a href="#optional">추가옵션</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -38,7 +38,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#subscription"     onclick="closeMenu()">36개월 구독</a>
     <a href="#price"  onclick="closeMenu()">가격</a>
-    <a href="#pros" onclick="closeMenu()">특장점</a>
+    <a href="#s5" onclick="closeMenu()">특장점</a>
     <a href="#reviews"      onclick="closeMenu()">후기</a>
     <a href="#optional"   onclick="closeMenu()">추가옵션</a>
     <a href="#faq"        onclick="closeMenu()">FAQ</a>
@@ -231,7 +231,7 @@
     </div>
   </section>
 
-  <!-- SECTION 5: Process (not in navbar) -->
+  <!-- SECTION 5: Pros (navbar link) -->
   <section id="s5">
     <div class="s5-inner">
       <div class="s5-text">
@@ -285,12 +285,138 @@
         <h2>출입감지 센서</h2>
       </div>
     </div>
+    <div class="s7-triangle-divider">
+      <div class="s7-triangle"></div>
+    </div>
   </section>
 
-  <!-- SECTION 7 (navbar link) -->
-  <section id="pros">
-    <h2 class="section-title">특장점</h2>
-    <p class="section-sub">Content coming soon.</p>
+  <!-- SECTION 7 (not in navbar) -->
+  <section id="s7">
+    <div class="s7-inner">
+      <div class="s7-buttons">
+        <button class="s7-btn active" data-index="0">
+          <span class="s7-btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.899L15 14"/><rect x="3" y="8" width="12" height="8" rx="2"/></svg>
+          </span>
+          <span class="s7-btn__label">영상촬영</span>
+        </button>
+        <button class="s7-btn" data-index="1">
+          <span class="s7-btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+          </span>
+          <span class="s7-btn__label">프라이버시 마스킹</span>
+        </button>
+        <button class="s7-btn" data-index="2">
+          <span class="s7-btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </span>
+          <span class="s7-btn__label">양방향 대화</span>
+        </button>
+        <button class="s7-btn" data-index="3">
+          <span class="s7-btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="14" rx="2"/><path d="M12 16v6M8 22h8M5 10H3a2 2 0 00-2 2v2a2 2 0 002 2h2M19 10h2a2 2 0 012 2v2a2 2 0 01-2 2h-2"/></svg>
+          </span>
+          <span class="s7-btn__label">AI 기능 탑재</span>
+        </button>
+        <button class="s7-btn" data-index="4">
+          <span class="s7-btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><path d="M13 15.5h2M17 15.5h2"/></svg>
+          </span>
+          <span class="s7-btn__label">출동 서비스</span>
+        </button>
+        <button class="s7-btn" data-index="5">
+          <span class="s7-btn__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <span class="s7-btn__label">보험 서비스</span>
+        </button>
+      </div>
+  
+      <div class="s7-cards">
+        <div class="s7-block active" data-index="0">
+          <h1 class="s7-title">캡스홈 현관CCTV 영상 촬영</h1>
+          <h2 class="s7-desc">현관 앞 움직임을 감지하여 FHD 고화질로 자동 녹화하고, 스마트폰 앱으로 실시간 알림과 영상을 전송</h2>
+          <div class="s7-media">
+            <img src="img/s7-1.jpg">
+
+          </div>
+        </div>
+  
+        <div class="s7-block" data-index="1">
+          <h1 class="s7-title">캡스홈 현관CCTV 프라이버시 마스킹 기능</h1>
+          <h2 class="s7-desc">실시간으로 감시·녹화되는 화면에서 민감한 정보가 식별되지 않도록 모자이크로 처리하는 기술</h2>
+          <div class="s7-media">
+            <video src="img/s7-2.mp4" alt="Privacy Masking Example" class="s7-media__video">
+          </div>
+        </div>
+  
+        <div class="s7-block" data-index="2">
+          <h1 class="s7-title">캡스홈 현관CCTV 양방향 대화</h1>
+          <h2 class="s7-desc">현관 앞 카메라(도어가드)에 내장된 마이크와 스피커를 통해 스마트폰 앱으로 방문객과 실시간 소통하는 기능</h2>
+          <div class="s7-media">
+            <video src="img/s7-3.mp4" alt="Two-Way Communication Example" class="s7-media__video">
+          </div>
+        </div>
+  
+        <div class="s7-block" data-index="3">
+          <h1 class="s7-title">캡스홈 현관CCTV AI기능 탑재</h1>
+          <h2 class="s7-desc">AI 기반 스마트 홈 보안 서비스로, 단순 녹화를 넘어 인공지능이 이상 행동을 감지하고 분석하여 맞춤형 보안을 제공</h2>
+          <div class="s7-media">
+            <img src="img/s7-4.jpg" alt="AI Functionality Example" class="s7-media__image">
+          </div>
+        </div>
+  
+        <div class="s7-block" data-index="4">
+          <h1 class="s7-title">캡스홈 현관CCTV 출동 서비스</h1>
+          <h2 class="s7-desc">현관 앞 보안에 취약한 아파트, 빌라 등에서 스마트폰 앱을 통해 실시간으로 현관 상황을 확인하고, 위급 시 긴급출동</h2>
+          <div class="s7-media">
+            <img src="img/s7-5.jpg" alt="Emergency Dispatch Example" class="s7-media__image">
+          </div>
+        </div>
+  
+        <div class="s7-block" data-index="5">
+          <h1 class="s7-title">캡스홈 현관CCTV 보험 서비스</h1>
+          <h2 class="s7-desc">현관문 앞에 설치된 AI CCTV(도어가드)를 통해 실시간 감지 및 24시간 출동 서비스를 제공하며, 화재·도난·파손·택배 도난 시 보상 혜택을 포함하는 종합 보안 서비스</h2>
+          <div class="s7-media">
+            <img src="img/s7-6.png" alt="Insurance Service Example" class="s7-media__image">
+          </div>
+          <div class="insurance-grid">
+            <div class="insurance-item">
+              <div class="insurance-icon">
+                <img src="img/icons/fire.png" alt="화재 발생시" />
+              </div>
+              <h3 class="insurance-label">화재 발생시</h3>
+              <p class="insurance-amount">최대 1억원</p>
+              <p class="insurance-note">(우리집 5천만원 + 이웃집 5천만원)</p>
+            </div>
+
+            <div class="insurance-item">
+              <div class="insurance-icon">
+                <img src="img/icons/rob.png" alt="도난 시" />
+              </div>
+              <h3 class="insurance-label">도난 시</h3>
+              <p class="insurance-amount">최대 1천만원</p>
+            </div>
+
+            <div class="insurance-item">
+              <div class="insurance-icon">
+                <img src="img/icons/break.png" alt="파손 시" />
+              </div>
+              <h3 class="insurance-label">파손 시</h3>
+              <p class="insurance-amount">최대 5백만원</p>
+            </div>
+
+            <div class="insurance-item">
+              <div class="insurance-icon">
+                <img src="img/icons/loss.png" alt="택배 도난 시" />
+              </div>
+              <h3 class="insurance-label">택배 도난 시</h3>
+              <p class="insurance-amount">최대50만원(연간)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SECTION 8 (not in navbar) -->
@@ -349,6 +475,22 @@
       mobileMenu.classList.remove('open');
       hamburger.classList.remove('open');
     }
+  </script>
+
+  <!-- SECTION 7 -->
+  <script>
+    const btns = document.querySelectorAll('.s7-btn');
+    const blocks = document.querySelectorAll('.s7-block');
+ 
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = btn.dataset.index;
+        btns.forEach(b => b.classList.remove('active'));
+        blocks.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelector(`.s7-block[data-index="${idx}"]`).classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
