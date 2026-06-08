@@ -53,6 +53,16 @@
     --sec-s6h2-786: 4vw;
     --sec-s6h2-786-line: 5vw;
 
+    /* s8 quote */
+    --sec-s8quote: 1.4rem;
+    --sec-s8quote-line:2rem;
+    --sec-s8quote-1250: 1.2rem;
+    --sec-s8quote-1250-line: 1.7rem;
+    --sec-s8quote-960: 1rem;
+    --sec-s8quote-960-line: 1.7rem;
+    --sec-s8quote-786: 4vw;
+    --sec-s8quote-786-line: 6vw;
+
     /* section subtitle */
     --sec-sub: 1.2rem;
     --sec-sub-line:2.4rem;
@@ -656,6 +666,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   /* background-color: orangered; */
   height: fit-content;
   padding: 50px 0 0 0 ;
+  max-width: 1250px;
 }
 .s7-buttons {
   display: flex;
@@ -821,6 +832,115 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   line-height: 16px;
 }
 
+/* SECTION 8 */
+#s8 {
+  overflow: hidden;
+}
+.s8-inner {
+  max-width: 1250px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 타이틀 */
+.s8-title {
+  margin-bottom: 48px;
+}
+.s8-title h1 {
+  font-size: var(--sec-ti2);
+  line-height: var(--sec-ti2-line);
+  font-weight: 400;
+  color: #666;
+}
+.s8-title h2 {
+  font-size: var(--sec-ti1);
+  line-height: var(--sec-ti1-line);
+  font-weight: 700;
+  color: #111;
+}
+
+/* 캐러셀 바디 */
+.s8-body {
+  overflow: hidden;
+  width: 100%;
+}
+
+.s8-track {
+  display: flex;
+  gap: 0;
+  transition: transform 0.4s ease;
+}
+
+/* 카드 */
+.s8-block {
+    width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* 별점 */
+.s8-stars {
+  color: #FFD700;
+  font-size: var(--sec-ti1);
+  line-height: var(--sec-ti1-line);
+  letter-spacing: 4px;
+}
+
+/* 인용문 */
+.s8-quote {
+    width: 100%;
+    font-size: var(--sec-s8quote);
+    line-height:var(--sec-s8quote-line);
+    font-weight: 400;
+    color: #333;
+    flex: 1;
+    overflow-wrap: break-word; 
+    word-break: keep-all; 
+    min-width: 0; 
+}
+.quote-open,
+.quote-close {
+    font-size: var(--sec-s8quote);
+    color: #025AFC;
+    font-weight: 700;
+}
+
+/* 해시태그 */
+.s8-hashtag h5 {
+    font-size: var(--sec-xsmall);
+    background-color: #025AFC;
+    color: var(--white);
+    width: fit-content;
+    padding: 8px 12px;
+    border-radius: 30px;
+    margin: 20px 0 0 0;
+    font-weight: 400;
+}
+
+/* 인디케이터 */
+.s8-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 100px;
+}
+.dot {
+    width: 10%;
+    max-width: 100px;
+    height: 3px;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.dot.active {
+    background-color: #025AFC;
+    width: 10%;
+    max-width: 100px;
+    border-radius: 4px;
+}
+
 
 
 #form .section-title { color: var(--white); }
@@ -874,6 +994,13 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #s6 .s6-inner .s6-box                           { height: 25vw;}
     #s6 .s6-inner .s6-box h1                        { font-size: var(--sec-s6h1-1250); line-height: var(--sec-s6h1-1250-line);}
     #s6 .s6-inner .s6-box h2                        { font-size: var(--sec-s6h2-1250); line-height: var(--sec-s6h2-1250-line);}
+
+    /* SECTION 8 */
+    .s8-title h1                                    { font-size: var(--sec-ti2-1250); line-height: var(--sec-ti2-1250-line);}
+    .s8-title h2                                    { font-size: var(--sec-ti1-1250); line-height: var(--sec-ti1-1250-line);}    
+    .s8-quote                                       { font-size: var(--sec-s8quote-1250); line-height: var(--sec-s8quote-1250-line);} 
+    .s8-stars                                       { font-size: var(--sec-ti1-1250); line-height: var(--sec-ti1-1250-line);}
+    .s8-hashtag h5                                  { font-size: var(--sec-xsmall-1250); line-height: var(--sec-xsmall-1250-line);}   
 }
 @media (max-width: 960px) {
     nav                                             { padding: 0 24px; height: 70px;}
@@ -934,6 +1061,13 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #s6 .s6-inner .s6-box img                       { width: 80%;}
     #s6 .s6-inner .s6-box h1                        { font-size: var(--sec-s6h1-960); line-height: var(--sec-s6h1-960-line);}
     #s6 .s6-inner .s6-box h2                        { font-size: var(--sec-s6h2-960); line-height: var(--sec-s6h2-960-line);}
+
+    /* SECTION 8 */
+    .s8-title h1                                    { font-size: var(--sec-ti2-960); line-height: var(--sec-ti2-960-line);}
+    .s8-title h2                                    { font-size: var(--sec-ti1-960); line-height: var(--sec-ti1-960-line);} 
+    .s8-quote                                       { font-size: var(--sec-s8quote-960); line-height: var(--sec-s8quote-960-line);}
+    .s8-stars                                       { font-size: var(--sec-ti1-960); line-height: var(--sec-ti1-960-line);}    
+    .s8-hashtag h5                                  { font-size: var(--sec-xsmall-960); line-height: var(--sec-xsmall-960-line);}
 }
 @media (max-width: 786px){
     #hero .section-sub                              { font-size: 3vw;}
@@ -982,4 +1116,14 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     .insurance-label                                { font-size: 15px;}
     .insurance-amount                               { font-size: 14px;}
     .insurance-note                                 { font-size: 11px; line-height: 14px;}
+
+    /* SECTION 8 */
+    .s8-title h1                                    { font-size: var(--sec-ti2-786); line-height: var(--sec-ti2-786-line);}
+    .s8-title h2                                    { font-size: var(--sec-ti1-786); line-height: var(--sec-ti1-786-line);}
+    .s8-quote                                       { font-size: var(--sec-s8quote-786); line-height: var(--sec-s8quote-786-line);}
+    .s8-stars                                       { font-size: var(--sec-ti1-786); line-height: var(--sec-ti1-786-line);}
+    .s8-hashtag h5                                  { margin-top: 20px; font-size: var(--sec-xsmall-786); line-height: var(--sec-xsmall-786-line);}
+    .s8-block                                       { padding: 20px 16px; min-width: 100%;}
+    .s8-track                                       { gap: 0;}
+    .s8-indicators                                  {margin-top: 20px;}
 }
