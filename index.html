@@ -21,7 +21,7 @@
         <li><a href="#price">가격</a></li>
         <li><a href="#s5">특장점</a></li>
         <li><a href="#reviews">후기</a></li>
-        <li><a href="#optional">추가옵션</a></li>
+        <li><a href="#s9">추가옵션</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#form">상담신청</a></li>
       </ul>
@@ -40,7 +40,7 @@
     <a href="#price"  onclick="closeMenu()">가격</a>
     <a href="#s5" onclick="closeMenu()">특장점</a>
     <a href="#reviews"      onclick="closeMenu()">후기</a>
-    <a href="#optional"   onclick="closeMenu()">추가옵션</a>
+    <a href="#s9"   onclick="closeMenu()">추가옵션</a>
     <a href="#faq"        onclick="closeMenu()">FAQ</a>
     <a href="#form"       onclick="closeMenu()">상담신청</a>
   </div>
@@ -346,15 +346,27 @@
           <h1 class="s7-title">캡스홈 현관CCTV 프라이버시 마스킹 기능</h1>
           <h2 class="s7-desc">실시간으로 감시·녹화되는 화면에서 민감한 정보가 식별되지 않도록 모자이크로 처리하는 기술</h2>
           <div class="s7-media">
-            <video src="img/s7-2.mp4" alt="Privacy Masking Example" class="s7-media__video">
-          </div>
+          <iframe
+            class="s7-media__video"
+            src="https://www.youtube.com/embed/f1q6Azd3NhI"
+            title="Privacy Masking Example"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
         </div>
   
         <div class="s7-block" data-index="2">
           <h1 class="s7-title">캡스홈 현관CCTV 양방향 대화</h1>
           <h2 class="s7-desc">현관 앞 카메라(도어가드)에 내장된 마이크와 스피커를 통해 스마트폰 앱으로 방문객과 실시간 소통하는 기능</h2>
           <div class="s7-media">
-            <video src="img/s7-3.mp4" alt="Two-Way Communication Example" class="s7-media__video">
+            <iframe
+            class="s7-media__video"
+            src="https://www.youtube.com/embed/ien8ce49BB0"
+            title="Two-Way Communication Example"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
           </div>
         </div>
   
@@ -511,9 +523,115 @@
   </section>
 
   <!-- SECTION 9 (navbar link) -->
-  <section id="optional">
-    <h2 class="section-title">함께 사용하면 편리한 캡스홈 현관CCTV의 옵션상품 추천드립니다.</h2>
-    <p class="section-sub">Content coming soon.</p>
+  <section id="s9">
+    <div class="s9-inner">
+      <div class="s9-title">
+        <h1>함께 사용하면 편리한 캡스홈 현관CCTV의</h1>
+        <h2>옵션상품 추천드립니다.</h2>  
+      </div>
+      <!-- 버튼 -->
+      <div class="s9-tabs">
+        <button class="s9-tab active" data-target="s9-homecam">캡스홈 홈캠</button>
+        <button class="s9-tab" data-target="s9-door">문열림 센서</button>
+        <button class="s9-tab" data-target="s9-sos">SOS 비상벨</button>
+      </div>
+      <!-- 뷰 -->
+      <div class="s9-product-card active" id="s9-homecam">
+        <div class="s9-product-title">
+          <span class="s9-text-blue">옵션 1) 캡스홈 홈캠 -> <span>월 6,600원</span></span>
+        </div>
+        <div class="s9-product-media">
+          <div class="s9-product-img">
+            <img src="img/optional/view.png" alt="캡스 뷰">
+          </div>
+          <div class="s9-product-video">
+            <iframe
+              src="https://www.youtube.com/embed/FauXQETNJ3c"
+              title="캡스 뷰 영상"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="s9-pf"> <!-- product features -->
+          <div class="s9-pf-inner">
+            <h3>1. 국내 1위 정보보안 기술로 영상 암호화</h3>
+            <p>국내 정보보안 1위 업체의 기술로 암호화하여 해킹 걱정 끝! – 강력한 해킹 방지 암호화 – SD카드에 녹화 영상 저장(32GB microSD 무료 제공)</p>
+          </div>
+          <div class="s9-pf-inner">
+            <h3>2. 움직임 감지하는 모션 카메라 탑재</h3>
+            <p>상하좌우 360도 회전하여 움직임을 감지하고 자동으로 추적하여 촬영</p>
+          </div>
+        </div>
+        <div class="s9-pf">
+          <div class="s9-pf-inner">
+            <h3>3. 실시간 영상 확인</h3>
+            <p>언제든 앱을 켜면 Full HD 영상으로 집 안이 한눈에! 실시간 양방향 대화도 가능!</p>
+          </div>
+          <div class="s9-pf-inner">
+            <h3>4. 촬영중단 설정기능</h3>
+            <p>프라이버시 보호가 필요할 대는앱 설정을 통해 카메라 렌즈를 숨겨 녹화와 영상 송출 중단 가능</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 문열림 센서 -->
+      <div class="s9-product-card" id="s9-door">
+        <div class="s9-product-title">
+          <span class="s9-text-blue">옵션 2) 문열림센서 -> <span>월 3,300원</span></span>
+        </div>
+        <div class="s9-product-media">
+          <div class="s9-product-img">
+            <img src="img/optional/door.png" alt="캡스 문열림센서">
+          </div>
+          <div class="s9-product-video">
+            <iframe
+              src="https://www.youtube.com/embed/6sR9aEBOi5Y"
+              title="캡스 문열림센서 영상"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="s9-pf"> <!-- product features -->
+          <div class="s9-pf-inner">
+            <h3>1. 창문/방문단속으로 보안을 한층 더 강화</h3>
+            <p>창문 혹은 방문에 부착하여 문열림/닫힘 상태 확인 가능 만약 문이 열리면 실시간으로 앱 알림 전송 가능</p>
+          </div>
+          <div class="s9-pf-inner">
+            <h3>2. 집안의 귀중품 보안</h3>
+            <p>귀중품을 보관한 서랍이나 옷장에도 센서 부착 가능 문열림이 감지되면 실시간 알림전송되어 즉시 인지</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOS -->
+      <div class="s9-product-card" id="s9-sos">
+        <div class="s9-product-title">
+            <span class="s9-text-blue">옵션 3) SOS비상버튼 -> <span>월 1,100원</span></span>
+          </div>
+          <div class="s9-product-media">
+            <div class="s9-product-img">
+              <img src="img/optional/sos.png" alt="캡스 비상벨">
+            </div>
+            <div class="s9-product-video">
+              <iframe
+                src="https://www.youtube.com/embed/Jtjg5Vgn_ns"
+                title="캡스 비상벨 영상"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          <div class="s9-pf"> <!-- product features -->
+            <div class="s9-pf-inner">
+              <h3>1. 위급할 땐 3초, 즉시 출동</h3>
+              <p>24시간 긴급 출동 요청을 위한 비상 버튼 우리아이, 우리부모님 위급할 땐 비상 버튼 3초만 꾹 누르면 ADT캡스 출동대원이 바로 출동</p>
+            </div>
+          </div>
+      </div>  
+    </div>
+    
   </section>
 
   <!-- SECTION 10 (not in navbar) -->
@@ -616,5 +734,27 @@
       });
     });   // ← DOMContentLoaded 닫기
    </script>
+
+   <!-- SECTION 9 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.s9-tab');
+    const cards = document.querySelectorAll('.s9-product-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+
+        // 탭 active 전환
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // 카드 active 전환
+        cards.forEach(card => card.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  });
+  </script>
 </body>
 </html>
