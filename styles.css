@@ -1099,6 +1099,267 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     font-weight: 400;
 }
 
+/* SECTION 10 */
+.s10-inner {
+    width: 100%;
+    max-width: 1250px;
+}
+#s10 {
+  padding: 80px 40px;
+  background: #fff;
+}
+/* 바디 */
+.s10-body {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+}
+
+/* 왼쪽 탭 */
+.s10-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  border-right: none;
+}
+
+.s10-tab {
+  padding: 16px 24px;
+  background: #f5f5f5;
+  border: none;
+  border-left: 3px solid transparent;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 4px;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.s10-tab.active {
+  background: #025AFC;
+  color: #fff;
+  border-left: 3px solid #025AFC;
+  font-weight: 700;
+}
+
+.s10-tab:hover:not(.active) {
+  background: #e8e8e8;
+  color: #333;
+}
+
+/* 오른쪽 콘텐츠 */
+.s10-right {
+  flex: 1;
+  padding-left: 40px;
+  width: 80%;
+}
+
+.s10-content {
+  display: none;
+}
+
+.s10-content.active {
+  display: block;
+}
+
+/* 설명 텍스트 */
+.s10-desc {
+  font-size: var(--sec-s6h1);
+  line-height: var(--sec-s6h1-line);
+  color: #025AFC;
+  font-weight: 400;
+  margin: 0 0 28px 0;
+  word-break: keep-all;
+}
+
+/* 이미지 그리드 */
+.s10-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.s10-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.s10-grid-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.s10-grid-item span {
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+}
+/* 안내 문구 */
+.s10-notice {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 48px 0 32px 0;
+  word-break: keep-all;
+}
+
+/* 조건 3가지 */
+.s10-conditions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.s10-condition-item img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.s10-condition-item p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.7rem;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* 설치 가능 / 불가 */
+.s10-install-check {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  /* width: 100%; */
+  overflow: hidden;
+}
+
+.s10-install-ok,
+.s10-install-no {
+  border-radius: 12px;
+  padding: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1; 
+}
+
+.s10-install-ok {
+  border: 2px solid #025AFC;
+}
+
+.s10-install-no {
+  border: 2px solid #FF2D2D;
+}
+.s10-install-imgs img {
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.s10-install-label {
+  text-align: center;
+  font-size: var(--sec-s8quote);
+  font-weight: 700;
+  margin: 0;
+}
+
+.s10-install-label.blue { color: #025AFC; }
+.s10-install-label.red  { color: #FF2D2D; }
+
+.s10-app {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.s10-app img {
+    max-height: 480px;
+}
+.s10-app ul {
+    padding-left: 30px;
+}
+.s10-app ul li {
+    padding-bottom: 20px;
+    font-size: var(--sec-small);
+    line-height: var(--sec-small-line);
+    font-weight: 400;
+    color: var(--ink-soft);
+}
+/* 배터리 타이틀 */
+.s10-battery-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 2rem;
+  margin: 0 0 36px 0;
+  word-break: keep-all;
+}
+
+/* 그리드 */
+.s10-battery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+/* 아이템 */
+.s10-battery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.s10-battery-item img {
+  width: 100%;
+  /* aspect-ratio: 9 / 16; */
+  object-fit: contain;
+  object-position: top;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* 번호 */
+.s10-battery-num {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #025AFC;
+}
+
+/* 라벨 */
+.s10-battery-label {
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .s10-battery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .s10-battery-title {
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
+}
+
+
+
 
 #form .section-title { color: var(--white); }
 #form .section-sub   { color: rgba(255,255,255,0.6); }
@@ -1164,6 +1425,10 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #s9 h2                                          { font-size: var(--sec-ti1-1250); line-height: var(--sec-ti1-line-1250);}
     .s9-pf-inner h3                                 { font-size: var(--sec-s8quote-1250); line-height: var(--sec-s8quote-1250-line);}
     .s9-pf-inner p                                  { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
+
+    /* SECTION 10 */
+    .s10-install-label                              { font-size: var(--sec-s8quote-1250);}
+    .s10-app ul li                                  { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
 }
 @media (max-width: 960px) {
     nav                                             { padding: 0 24px; height: 70px;}
@@ -1237,6 +1502,15 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #s9 h2                                          { font-size: var(--sec-ti1-960); line-height: var(--sec-ti1-960-line);}
     .s9-pf-inner h3                                 { font-size: var(--sec-s8quote-960); line-height: var(--sec-s8quote-960-line);}
     .s9-pf-inner p                                  { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
+
+    /* SECTION 10 */
+    .s10-install-ok,.s10-install-no                 {width: 100%;}
+    .s10-install-check                              { flex-direction: column;}
+    .s10-install-imgs img                           { width: 100%; height: fit-content;}
+    .s10-install-label                              { font-size: var(--sec-s8quote-960);}
+    .s10-app ul li                                  { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
+    .s10-app                                        { flex-direction: column;}
+    .s10-app ul                                     { padding-top: 30px;}
 }
 @media (max-width: 786px){
     #hero .section-sub                              { font-size: 3vw;}
@@ -1310,4 +1584,16 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     .s9-product-img img                             { width: 40%; margin: 30px 0;}
     .s9-tabs                                        { flex-direction: column;}
     .s9-tab                                         { width: 100%; text-align: center;}
+
+    /* SECTION 10 */
+    .s10-install-label                              { font-size: var(--sec-s8quote-786);}
+    #s10                                            { padding: 60px 24px;}
+    .s10-title h2                                   { font-size: 1.6rem;}
+    .s10-body                                       { flex-direction: column; gap: 24px;}
+    .s10-left                                       { flex-direction: row; min-width: unset; width: 100%; gap: 8px;}
+    .s10-tab                                        { flex: 1; text-align: center; padding: 12px 8px; border-left: none;  border-bottom: 3px solid transparent; white-space: nowrap;}
+    .s10-tab.active                                 { border-left: none; border-bottom: 3px solid #fff; }
+    .s10-right                                      { padding-left: 0; width: 100%;}
+    s10-grid                                        { grid-template-columns: repeat(2, 1fr);}
+    .s10-app ul li                                  { font-size: var(--sec-small-786); line-height: var(--sec-small-786-line);}
 }
