@@ -306,7 +306,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
 #pros               { background: var(--white); }
 #reviews            { background: var(--off-white); }
 #s10                { background: var(--white); }
-#faq                { background: var(--off-white); }
+#s11                { background: var(--off-white); }
 #s12                { background: var(--white); }
 #form               { background: var(--ink); color: var(--white); }
 
@@ -1108,21 +1108,17 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   padding: 80px 40px;
   background: #fff;
 }
-/* 바디 */
 .s10-body {
   display: flex;
   gap: 0;
   align-items: flex-start;
 }
-
-/* 왼쪽 탭 */
 .s10-left {
   display: flex;
   flex-direction: column;
   min-width: 160px;
   border-right: none;
 }
-
 .s10-tab {
   padding: 16px 24px;
   background: #f5f5f5;
@@ -1138,35 +1134,27 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   word-break: keep-all;
   white-space: nowrap;
 }
-
 .s10-tab.active {
   background: #025AFC;
   color: #fff;
   border-left: 3px solid #025AFC;
   font-weight: 700;
 }
-
 .s10-tab:hover:not(.active) {
   background: #e8e8e8;
   color: #333;
 }
-
-/* 오른쪽 콘텐츠 */
 .s10-right {
   flex: 1;
   padding-left: 40px;
   width: 80%;
 }
-
 .s10-content {
   display: none;
 }
-
 .s10-content.active {
   display: block;
 }
-
-/* 설명 텍스트 */
 .s10-desc {
   font-size: var(--sec-s6h1);
   line-height: var(--sec-s6h1-line);
@@ -1175,34 +1163,28 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   margin: 0 0 28px 0;
   word-break: keep-all;
 }
-
-/* 이미지 그리드 */
 .s10-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
-
 .s10-grid-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-
 .s10-grid-item img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 8px;
 }
-
 .s10-grid-item span {
   font-size: 0.95rem;
   color: #333;
   text-align: center;
 }
-/* 안내 문구 */
 .s10-notice {
   font-size: 1rem;
   font-weight: 600;
@@ -1210,8 +1192,6 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   margin: 48px 0 32px 0;
   word-break: keep-all;
 }
-
-/* 조건 3가지 */
 .s10-conditions {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1219,14 +1199,12 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   margin-bottom: 40px;
   text-align: center;
 }
-
 .s10-condition-item img {
   width: 140px;
   height: 140px;
   object-fit: contain;
   margin-bottom: 16px;
 }
-
 .s10-condition-item p {
   font-size: 0.95rem;
   color: #444;
@@ -1234,8 +1212,6 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   margin: 0;
   word-break: keep-all;
 }
-
-/* 설치 가능 / 불가 */
 .s10-install-check {
   display: flex;
   gap: 15px;
@@ -1243,7 +1219,6 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   /* width: 100%; */
   overflow: hidden;
 }
-
 .s10-install-ok,
 .s10-install-no {
   border-radius: 12px;
@@ -1253,11 +1228,9 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   gap: 12px;
   flex: 1; 
 }
-
 .s10-install-ok {
   border: 2px solid #025AFC;
 }
-
 .s10-install-no {
   border: 2px solid #FF2D2D;
 }
@@ -1266,17 +1239,14 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   border-radius: 8px;
   display: block;
 }
-
 .s10-install-label {
   text-align: center;
   font-size: var(--sec-s8quote);
   font-weight: 700;
   margin: 0;
 }
-
 .s10-install-label.blue { color: #025AFC; }
 .s10-install-label.red  { color: #FF2D2D; }
-
 .s10-app {
     display: flex;
     align-items: center;
@@ -1295,7 +1265,6 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     font-weight: 400;
     color: var(--ink-soft);
 }
-/* 배터리 타이틀 */
 .s10-battery-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -1304,23 +1273,18 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   margin: 0 0 36px 0;
   word-break: keep-all;
 }
-
-/* 그리드 */
 .s10-battery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   align-items: start;
 }
-
-/* 아이템 */
 .s10-battery-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
 }
-
 .s10-battery-item img {
   width: 100%;
   /* aspect-ratio: 9 / 16; */
@@ -1330,15 +1294,11 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
-
-/* 번호 */
 .s10-battery-num {
   font-size: 1.2rem;
   font-weight: 700;
   color: #025AFC;
 }
-
-/* 라벨 */
 .s10-battery-label {
   font-size: 0.95rem;
   color: #333;
@@ -1346,20 +1306,80 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   word-break: keep-all;
 }
 
-/* 모바일 */
-@media (max-width: 768px) {
-  .s10-battery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  .s10-battery-title {
-    font-size: 1rem;
-    line-height: 1.7rem;
-  }
+/* SECTION 11 */
+.s11-inner {
+    width: 100%;
+    max-width: 1250px;
+}
+.s11-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.s11-faq-item {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+.s11-faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111;
+  text-align: left;
+  gap: 16px;
+  word-break: keep-all;
+}
+.s11-faq-item .s11-faq-q:hover,
+.s11-faq-item.open .s11-faq-q {
+  background: #f0f4ff;
 }
 
-
-
+.s11-faq-item.open .s11-faq-q {
+  background: #f0f4ff;
+}
+.s11-q-mark {
+  color: #025AFC;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.s11-arrow {
+  font-size: 0.8rem;
+  color: #025AFC;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.s11-arrow.open {
+  transform: rotate(180deg);
+  
+}
+.s11-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 28px;
+}
+.s11-faq-a.open {
+  max-height: 300px;
+  padding: 24px 28px;
+}
+.s11-faq-a p {
+  font-size: 0.95rem;
+  line-height: 1.8rem;
+  color: #555;
+  margin: 0;
+  padding-left: 20px;
+  border-left: 3px solid #025AFC;
+  word-break: keep-all;
+}
 
 #form .section-title { color: var(--white); }
 #form .section-sub   { color: rgba(255,255,255,0.6); }
@@ -1429,6 +1449,9 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     /* SECTION 10 */
     .s10-install-label                              { font-size: var(--sec-s8quote-1250);}
     .s10-app ul li                                  { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
+
+    /* SECTION 12 */
+    
 }
 @media (max-width: 960px) {
     nav                                             { padding: 0 24px; height: 70px;}
@@ -1511,6 +1534,9 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     .s10-app ul li                                  { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
     .s10-app                                        { flex-direction: column;}
     .s10-app ul                                     { padding-top: 30px;}
+
+    /* SECTION 12 */
+    
 }
 @media (max-width: 786px){
     #hero .section-sub                              { font-size: 3vw;}
@@ -1596,4 +1622,13 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     .s10-right                                      { padding-left: 0; width: 100%;}
     s10-grid                                        { grid-template-columns: repeat(2, 1fr);}
     .s10-app ul li                                  { font-size: var(--sec-small-786); line-height: var(--sec-small-786-line);}
+    .s10-battery-grid                               { grid-template-columns: repeat(2, 1fr); gap: 16px;}
+    .s10-battery-title                              { font-size: 1rem; line-height: 1.7rem;}
+
+    /* SECTION 11 */
+    #s11                                            { padding: 60px 24px;}
+    .s11-title h2                                   { font-size: 1.6rem;}
+    .s11-faq-q                                      { padding: 20px; font-size: 0.95rem;}
+    .s11-faq-a                                      { padding: 0 20px;}
+    .s11-faq-a.open                                 { padding: 20px;}
 }
