@@ -91,7 +91,7 @@
     --sec-small-960: 0.7rem;
     --sec-small-960-line: 1.5rem;
     --sec-small-786: 2.5vw;
-    --sec-small-786-line: 4vw;
+    --sec-small-786-line: 5vw;
 
     /* xsmall */
     --sec-xsmall: 0.8rem;
@@ -1125,7 +1125,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   border: none;
   border-left: 3px solid transparent;
   text-align: left;
-  font-size: 1rem;
+  font-size: var(--sec-small);
   font-weight: 500;
   color: #666;
   cursor: pointer;
@@ -1181,12 +1181,13 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   border-radius: 8px;
 }
 .s10-grid-item span {
-  font-size: 0.95rem;
+  font-size: var(--sec-small);
   color: #333;
   text-align: center;
 }
 .s10-notice {
-  font-size: 1rem;
+  font-size: var(--sec-small);
+  line-height: var(--sec-small-line);
   font-weight: 600;
   color: #111;
   margin: 48px 0 32px 0;
@@ -1198,17 +1199,17 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   gap: 24px;
   margin-bottom: 40px;
   text-align: center;
+  width: 100%;
 }
 .s10-condition-item img {
-  width: 140px;
-  height: 140px;
+  width: 100%;
   object-fit: contain;
   margin-bottom: 16px;
 }
 .s10-condition-item p {
-  font-size: 0.95rem;
+  font-size: var(--sec-xsmall);
   color: #444;
-  line-height: 1.7rem;
+  line-height: var(--sec-xsmall-line);
   margin: 0;
   word-break: keep-all;
 }
@@ -1373,12 +1374,70 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
 }
 .s11-faq-a p {
   font-size: 0.95rem;
+  font-weight: 400;
   line-height: 1.8rem;
   color: #555;
   margin: 0;
   padding-left: 20px;
   border-left: 3px solid #025AFC;
   word-break: keep-all;
+}
+
+/* SECTION 12 */
+.s12-inner {
+    width: 100%;
+    max-width: 1250px;
+}
+.s12-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.s12-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  /* max-width: 180px; */
+  background-color: var(--off-white);
+  padding: 30px;
+  border-radius: 20px;
+}
+.s12-icon {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.s12-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.s12-label {
+  font-size: var(--sec-sub);
+  line-height: var(--sec-sub-line);
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin: 0;
+  word-break: keep-all;
+}
+.s12-sub {
+  font-size: var(--sec-small);
+  line-height: var(--sec-small-line);
+  color: #888;
+  text-align: center;
+  margin: -8px 0 0 0;
+}
+.s12-arrow {
+  color: #FF2D2D;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-bottom: 32px;  /* 라벨 높이만큼 위로 */
 }
 
 #form .section-title { color: var(--white); }
@@ -1448,9 +1507,13 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
 
     /* SECTION 10 */
     .s10-install-label                              { font-size: var(--sec-s8quote-1250);}
-    .s10-app ul li                                  { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
+    .s10-app ul li, .s10-notice,.s10-grid-item span,.s10-tab { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
+    .s10-condition-item p                           { font-size: var(--sec-xsmall-1250); line-height: var(--sec-xsmall-1250-line);}
+    .s10-desc                                       { font-size: var(--sec-s6h1-1250);}
 
     /* SECTION 12 */
+    .s12-label                                      { font-size: var(--sec-sub-1250); line-height: var(--sec-sub-1250-line);}
+    .s12-sub                                        { font-size: var(--sec-small-1250); line-height: var(--sec-small-1250-line);}
     
 }
 @media (max-width: 960px) {
@@ -1489,11 +1552,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     #s4 .s4-card-group .left                        { width: 100%; gap: 20px; justify-content: center;}
     #s4 .s4-card-group .left img                    { width: 30%; }
     #s4 .s4-card-group .left h5                     { font-size: var(--sec-label-960); line-height: var(--sec-label-960-line);}
-    .discount-table th, .discount-table td {
-        padding: 12px 8px;  
-        font-size: var(--sec-small-960)-12px;
-        line-height: var(--sec-small-960-line);
-    }
+    .discount-table th, .discount-table td          { padding: 12px 8px; font-size: var(--sec-small-960)-12px; line-height: var(--sec-small-960-line);}
     #s4 .s4-title-group .section-title              { font-size: var(--sec-ti2-960); line-height: var(--sec-ti2-960-line);}
     #s4 .s4-title-group .section-sub-title          { font-size: var(--sec-ti1-960); line-height: var(--sec-ti1-960-line);}
     #s4 .s4-card-group .right .table-below h1       { font-size: var(--sec-xsmall-960); line-height: var(--sec-xsmall-960-line);}
@@ -1527,16 +1586,20 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     .s9-pf-inner p                                  { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
 
     /* SECTION 10 */
-    .s10-install-ok,.s10-install-no                 {width: 100%;}
+    .s10-install-ok,.s10-install-no                 { width: 100%;}
     .s10-install-check                              { flex-direction: column;}
     .s10-install-imgs img                           { width: 100%; height: fit-content;}
     .s10-install-label                              { font-size: var(--sec-s8quote-960);}
-    .s10-app ul li                                  { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
+    .s10-app ul li, .s10-notice,.s10-grid-item span,.s10-tab { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
     .s10-app                                        { flex-direction: column;}
     .s10-app ul                                     { padding-top: 30px;}
+    .s10-condition-item p                           { font-size: var(--sec-xsmall-960); line-height: var(--sec-xsmall-960-line);}
+    .s10-desc                                       { font-size: var(--sec-s6h1-960);}
+    .s12-step                                       { padding: 10px 30px;}
 
     /* SECTION 12 */
-    
+    .s12-label                                      { font-size: var(--sec-sub-960); line-height: var(--sec-sub-960-line);}
+    .s12-sub                                        { font-size: var(--sec-small-960); line-height: var(--sec-small-960-line);}
 }
 @media (max-width: 786px){
     #hero .section-sub                              { font-size: 3vw;}
@@ -1621,9 +1684,11 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     .s10-tab.active                                 { border-left: none; border-bottom: 3px solid #fff; }
     .s10-right                                      { padding-left: 0; width: 100%;}
     s10-grid                                        { grid-template-columns: repeat(2, 1fr);}
-    .s10-app ul li                                  { font-size: var(--sec-small-786); line-height: var(--sec-small-786-line);}
+    .s10-app ul li, .s10-notice,.s10-grid-item span,.s10-tab { font-size: var(--sec-small-786); line-height: var(--sec-small-786-line);}
     .s10-battery-grid                               { grid-template-columns: repeat(2, 1fr); gap: 16px;}
     .s10-battery-title                              { font-size: 1rem; line-height: 1.7rem;}
+    .s10-condition-item p                           { font-size: var(--sec-xsmall-786); line-height: var(--sec-xsmall-786-line);}
+    .s10-desc                                       { font-size: var(--sec-s6h1-786);}
 
     /* SECTION 11 */
     #s11                                            { padding: 60px 24px;}
@@ -1631,4 +1696,14 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
     .s11-faq-q                                      { padding: 20px; font-size: 0.95rem;}
     .s11-faq-a                                      { padding: 0 20px;}
     .s11-faq-a.open                                 { padding: 20px;}
+
+    /* SECTION 12 */
+    .s12-label                                      { font-size: var(--sec-sub-786); line-height: var(--sec-sub-786-line);}
+    .s12-sub                                        { font-size: var(--sec-small-786); line-height: 30px}
+    .s12-steps                                      { flex-direction: column; gap: 20px; width: fit-content; margin: 0 auto; }
+    .s12-arrow                                      { transform: rotate(90deg); margin-bottom: 0;}
+    .s12-step                                       { max-width: 100%; flex-direction: row; gap: 20px; justify-content: flex-start; width: 100%; justify-content: left; align-items: center;}
+    .s12-icon                                       { width: 80px; height: 64px; flex-shrink: 0; margin: 10px 0;}
+    .s12-label                                      { text-align: left;}
+    .s12-sub                                        { text-align: left;}
 }
