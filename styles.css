@@ -307,7 +307,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
 #reviews            { background: var(--off-white); }
 #s10                { background: var(--white); }
 #s11                { background: var(--off-white); }
-#s12                { background: var(--white); }
+#s12                { background: #f1f5fa; }
 #form               { background: var(--ink); color: var(--white); }
 
 .hero-inner {
@@ -1401,7 +1401,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   gap: 40px;
   flex: 1;
   /* max-width: 180px; */
-  background-color: var(--off-white);
+  background-color: #ffffff5e;
   padding: 30px;
   border-radius: 20px;
 }
