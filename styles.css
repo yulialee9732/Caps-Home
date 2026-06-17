@@ -1443,6 +1443,71 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
 #form .section-title { color: var(--white); }
 #form .section-sub   { color: rgba(255,255,255,0.6); }
 
+/* ================================
+   FOOTER
+================================ */
+#footer {
+  background: #222427;
+  padding: 40px;
+}
+
+.footer-inner {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  align-items: center;
+}
+
+.footer-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-copy {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-copy a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-copy a:hover {
+  color: #fff;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  #footer {
+    padding: 32px 24px;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .footer-divider {
+    display: none;
+  }
+}
+
 /* Decorative accent line */
 .accent-line {
     width: 60px;
