@@ -23,7 +23,7 @@
         <li><a href="#reviews">후기</a></li>
         <li><a href="#s9">추가옵션</a></li>
         <li><a href="#s11">FAQ</a></li>
-        <li><a href="#form">상담신청</a></li>
+        <li><a href="#s13">상담신청</a></li>
       </ul>
       <a href="tel:+8215220392" class="nav-num">신규상담: 1522-0392</a>  
     </div>
@@ -912,10 +912,93 @@
   </section>
 
   <!-- SECTION 13: (navbar link) -->
-  <!-- <section id="s13">
-    <h2 class="section-title">Contact Form</h2>
-    <p class="section-sub">Content coming soon.</p>
-  </section> -->
+  <section id="s13">
+    <div class="s13-inner">
+      <div class="s8-title">
+        <h1>가장 완벽한 홈 보안의 시작</h1>
+        <h2>도어가드 캡스홈 상담 신청</h2>
+      </div>
+
+      <!-- Honeypot: hidden from real users, bots fill it in -->
+      <input
+        type="text"
+        id="ch-honeypot"
+        name="website"
+        style="display:none;position:absolute;left:-9999px"
+        tabindex="-1"
+        autocomplete="off"
+      >
+      
+      <form class="ch-form" id="chForm" novalidate>
+      
+        <!-- Row 1: 연락처 + 설치주소 -->
+        <div class="ch-form-grid">
+          <div class="ch-form-group">
+            <label class="ch-label" for="ch-contact">
+              연락처 <span class="req">*</span>
+            </label>
+            <input
+              class="ch-input"
+              type="tel"
+              id="ch-contact"
+              name="연락처"
+              placeholder="010-0000-0000"
+              required
+            >
+          </div>
+          <div class="ch-form-group">
+            <label class="ch-label" for="ch-address">
+              설치주소 <span class="req">*</span>
+            </label>
+            <input
+              class="ch-input"
+              type="text"
+              id="ch-address"
+              name="설치주소"
+              placeholder="설치 주소를 입력해주세요"
+              required
+            >
+          </div>
+        </div>
+      
+        <!-- Row 2: 설치내용 textarea -->
+        <div class="ch-textarea-section">
+          <div class="ch-textarea-header">
+            <label class="ch-label" for="ch-content" style="margin-bottom:0">설치내용</label>
+            <span class="ch-char-count"><span id="ch-count">0</span> / 500</span>
+          </div>
+          <textarea
+            class="ch-textarea"
+            id="ch-content"
+            name="설치내용"
+            placeholder="상담 설치 내용을 적어주세요"
+            maxlength="500"
+          ></textarea>
+        </div>
+      
+        <!-- Privacy consent -->
+        <div class="ch-privacy">
+          <input type="checkbox" id="ch-privacy" name="privacy">
+          <label for="ch-privacy">
+            본인은 개인정보 수집 및 이용에 동의합니다.
+            수집된 개인정보(연락처, 설치주소, 설치내용)는 상담 목적으로만 사용되며,
+            <strong>3개월 후 자동 삭제</strong>됩니다.
+          </label>
+        </div>
+      
+        <!-- Submit -->
+        <button class="ch-submit-btn" type="submit" id="ch-submit">상담 신청</button>
+      
+        <!-- Result message -->
+        <div class="ch-msg" id="ch-msg"></div>
+      
+      </form>
+      
+
+
+
+    </div>
+  </section>
 
   <footer id="footer">
     <div class="footer-inner">
@@ -1086,5 +1169,96 @@
       });
     });
   </script>
+
+  <!-- SECTION 13 -->
+   <script>
+    (function () {
+      // ── Replace with your deployed Render URL ───────────────────────────────────
+      const API_URL = 'YOUR_RENDER_URL/api/contact';
+      // ────────────────────────────────────────────────────────────────────────────
+    
+      const form      = document.getElementById('chForm');
+      const contactEl = document.getElementById('ch-contact');
+      const addressEl = document.getElementById('ch-address');
+      const contentEl = document.getElementById('ch-content');
+      const privacyEl = document.getElementById('ch-privacy');
+      const submitBtn = document.getElementById('ch-submit');
+      const msgEl     = document.getElementById('ch-msg');
+      const countEl   = document.getElementById('ch-count');
+      const honeypot  = document.getElementById('ch-honeypot');
+    
+      // Live character count for textarea
+      contentEl.addEventListener('input', function () {
+        countEl.textContent = this.value.length;
+      });
+    
+      function showMsg(text, type) {
+        msgEl.textContent = text;
+        msgEl.className = 'ch-msg ' + type;
+      }
+    
+      function clearMsg() {
+        msgEl.className = 'ch-msg';
+        msgEl.textContent = '';
+      }
+    
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        clearMsg();
+    
+        const 연락처  = contactEl.value.trim();
+        const 설치주소 = addressEl.value.trim();
+        const 설치내용 = contentEl.value.trim();
+    
+        // Client-side validation
+        if (!연락처) {
+          showMsg('연락처를 입력해주세요.', 'error');
+          contactEl.focus();
+          return;
+        }
+        if (!설치주소) {
+          showMsg('설치주소를 입력해주세요.', 'error');
+          addressEl.focus();
+          return;
+        }
+        if (!privacyEl.checked) {
+          showMsg('개인정보 수집 및 이용에 동의해주세요.', 'error');
+          return;
+        }
+    
+        // Disable button while submitting
+        submitBtn.disabled = true;
+        submitBtn.textContent = '접수 중...';
+    
+        try {
+          const res = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              연락처,
+              설치주소,
+              설치내용,
+              website: honeypot.value, // honeypot field — should be empty
+            }),
+          });
+    
+          const data = await res.json();
+    
+          if (data.success) {
+            showMsg('상담 신청이 완료되었습니다. 빠른 시일 내에 연락드리겠습니다. 감사합니다!', 'success');
+            form.reset();
+            countEl.textContent = '0';
+          } else {
+            showMsg(data.message || '오류가 발생했습니다. 다시 시도해주세요.', 'error');
+          }
+        } catch (err) {
+          showMsg('네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '상담 신청';
+        }
+      });
+    })();
+    </script>
 </body>
 </html>

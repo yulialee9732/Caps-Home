@@ -308,7 +308,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
 #s10                { background: var(--white); }
 #s11                { background: var(--off-white); }
 #s12                { background: #f1f5fa; }
-#form               { background: var(--ink); color: var(--white); }
+#s13               { background: var(--ink); color: var(--white); }
 
 .hero-inner {
     position: absolute;
@@ -1440,8 +1440,204 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 80px); }
   margin-bottom: 32px;  /* 라벨 높이만큼 위로 */
 }
 
-#form .section-title { color: var(--white); }
-#form .section-sub   { color: rgba(255,255,255,0.6); }
+/* SECTION 13 */
+.s13-inner {
+    width: 100%;
+    max-width: 1250px;
+}
+.s13-inner .s8-title h1{
+  color: var(--white);
+}
+.s13-inner .s8-title h2{
+  color: var(--white);
+}
+  /* Scoped with .ch- prefix to avoid collisions with site styles */
+  .ch-form *,
+  .ch-form *::before,
+  .ch-form *::after {
+    box-sizing: border-box;
+  }
+ 
+  .ch-form {
+    width: 100%;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    color: #222;
+    background-color: #ffffff;
+    padding: 80px 40px;
+    border-radius: 20px;
+  }
+ 
+  /* ── Top row: 2-column grid ── */
+  .ch-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 40px;
+    margin-bottom: 32px;
+  }
+ 
+  .ch-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  .ch-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+  }
+ 
+  .ch-label .req {
+    color: #e53e3e;
+    margin-left: 3px;
+  }
+ 
+  /* Underline-only input matching the existing form screenshot */
+  .ch-input {
+    border: none;
+    border-bottom: 1.5px solid #bbb;
+    outline: none;
+    padding: 8px 2px;
+    font-size: 15px;
+    color: #222;
+    background: transparent;
+    width: 100%;
+    transition: border-color 0.2s;
+    font-family: inherit;
+  }
+ 
+  .ch-input::placeholder {
+    color: #bbb;
+  }
+ 
+  .ch-input:focus {
+    border-bottom-color: #1a39c7;
+  }
+ 
+  /* ── Textarea section ── */
+  .ch-textarea-section {
+    margin-bottom: 24px;
+  }
+ 
+  .ch-textarea-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+ 
+  .ch-char-count {
+    font-size: 12px;
+    color: #999;
+  }
+ 
+  .ch-textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 14px;
+    font-size: 15px;
+    color: #222;
+    resize: vertical;
+    min-height: 130px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+    line-height: 1.6;
+  }
+ 
+  .ch-textarea::placeholder {
+    color: #bbb;
+  }
+ 
+  .ch-textarea:focus {
+    border-color: #1a39c7;
+  }
+ 
+  /* ── Privacy checkbox ── */
+  .ch-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+  }
+ 
+  .ch-privacy input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: #1a39c7;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+ 
+  .ch-privacy label {
+    cursor: pointer;
+  }
+ 
+  .ch-privacy strong {
+    color: #1a39c7;
+  }
+ 
+  /* ── Submit button ── */
+  .ch-submit-btn {
+    background: #1a39c7;
+    color: #fff;
+    border: none;
+    padding: 13px 36px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, opacity 0.2s;
+    font-family: inherit;
+    letter-spacing: 0.01em;
+  }
+ 
+  .ch-submit-btn:hover:not(:disabled) {
+    background: #1530a8;
+  }
+ 
+  .ch-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+ 
+  /* ── Feedback message ── */
+  .ch-msg {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    display: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+  }
+ 
+  .ch-msg.success {
+    color: #276749;
+    background: #f0fff4;
+    border: 1px solid #9ae6b4;
+    display: block;
+  }
+ 
+  .ch-msg.error {
+    color: #c53030;
+    background: #fff5f5;
+    border: 1px solid #feb2b2;
+    display: block;
+  }
+ 
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    .ch-form-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
 
 /* ================================
    FOOTER
