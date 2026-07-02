@@ -943,6 +943,8 @@
               id="ch-contact"
               name="연락처"
               placeholder="010-0000-0000"
+              maxlength="13"
+              autocomplete="off"
               required
             >
           </div>
@@ -1187,7 +1189,44 @@
       const countEl   = document.getElementById('ch-count');
       const honeypot  = document.getElementById('ch-honeypot');
     
-      // Live character count for textarea
+      // ── Phone number formatting: 010-XXXX-XXXX ──────────────────────────────────
+      contactEl.addEventListener('focus', function () {
+        if (this.value === '') this.value = '010-';
+      });
+    
+      contactEl.addEventListener('input', function (e) {
+        // Strip everything except digits
+        let digits = this.value.replace(/\D/g, '');
+    
+        // Cap at 11 digits (010 + 4 + 4)
+        if (digits.length > 11) digits = digits.slice(0, 11);
+    
+        // Format: 010-XXXX-XXXX
+        let formatted = '';
+        if (digits.length <= 3) {
+          formatted = digits;
+        } else if (digits.length <= 7) {
+          formatted = digits.slice(0, 3) + '-' + digits.slice(3);
+        } else {
+          formatted = digits.slice(0, 3) + '-' + digits.slice(3, 7) + '-' + digits.slice(7);
+        }
+    
+        this.value = formatted;
+      });
+    
+      contactEl.addEventListener('keydown', function (e) {
+        // Prevent deleting past the "010-" prefix
+        if ((e.key === 'Backspace' || e.key === 'Delete') && this.value === '010-') {
+          e.preventDefault();
+        }
+      });
+    
+      contactEl.addEventListener('blur', function () {
+        // Clear if only the prefix was left
+        if (this.value === '010-') this.value = '';
+      });
+    
+    
       contentEl.addEventListener('input', function () {
         countEl.textContent = this.value.length;
       });
@@ -1259,6 +1298,6 @@
         }
       });
     })();
-    </script>
+   </script>
 </body>
 </html>
