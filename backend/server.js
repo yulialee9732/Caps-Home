@@ -6,9 +6,21 @@ const { Resend } = require('resend');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ─── CORS ────────────────────────────────────────────────────────────────────
+const allowedOrigins = [
+  process.env.ALLOWED_ORIGIN,
+  'http://127.0.0.1:5500',
+  'http://localhost:5500',
+].filter(Boolean);
+
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGIN,
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g. curl, Postman)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['POST', 'OPTIONS'],
 }));
 
