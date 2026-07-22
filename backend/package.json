@@ -1,8 +1,7 @@
-
 {
   "name": "capshome-contact-backend",
   "version": "1.0.0",
-  "description": "Contact form backend for 캡스홈 — Google Sheets + Resend email",
+  "description": "Contact form backend for 캡스홈 — Google Sheets + Nodemailer",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -12,6 +11,6 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "googleapis": "^140.0.0",
-    "resend": "^4.0.0"
+    "nodemailer": "^6.9.0"
   }
 }
